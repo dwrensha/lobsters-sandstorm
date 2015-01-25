@@ -1,9 +1,7 @@
 @0xb343d76ff4c073a8;
 
 using Spk = import "/sandstorm/package.capnp";
-# This imports:
-#   $SANDSTORM_HOME/latest/usr/include/sandstorm/package.capnp
-# Check out that file to see the full, documented package definition format.
+using Util = import "/sandstorm/util.capnp";
 
 const pkgdef :Spk.PackageDefinition = (
   # The package definition. Note that the spk tool looks specifically for the
@@ -53,19 +51,17 @@ const pkgdef :Spk.PackageDefinition = (
   )
 );
 
+const commandEnvironment : List(Util.KeyValue) =
+  [(key = "PATH",
+    value = "/usr/local/share/rbenv/versions/1.9.3-p429/bin:/usr/local/bin:/usr/bin:/bin")];
+
 const startCommand :Spk.Manifest.Command = (
-  # Here we define the command used to start up your server.
   argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "start.sh"],
-  environ = [
-    # Note that this defines the *entire* environment seen by your app.
-    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")
-  ]
+  environ = .commandEnvironment
 );
 
 
 const continueCommand :Spk.Manifest.Command = (
   argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "continue.sh"],
-  environ = [
-    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")
-  ]
+  environ = .commandEnvironment
 );
