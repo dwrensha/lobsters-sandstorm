@@ -44,7 +44,7 @@ const pkgdef :Spk.PackageDefinition = (
 
   fileList = "sandstorm-files.list",
 
-  alwaysInclude = ["lobsters/app", "lobsters/config", "lobsters/public"],
+  alwaysInclude = ["lobsters/app", "lobsters/config", "lobsters/public", "lobsters/tmp"],
 
   bridgeConfig = (
     viewInfo = (
