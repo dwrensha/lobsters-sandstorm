@@ -53,7 +53,7 @@ const pkgdef :Spk.PackageDefinition = (
 
 const commandEnvironment : List(Util.KeyValue) =
   [(key = "PATH",
-    value = "/usr/local/share/rbenv/versions/1.9.3-p429/bin:/usr/local/bin:/usr/bin:/bin")];
+    value = "/usr/local/rbenv/versions/1.9.3-p429/bin:/usr/local/bin:/usr/bin:/bin")];
 
 const startCommand :Spk.Manifest.Command = (
   argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "start.sh"],
