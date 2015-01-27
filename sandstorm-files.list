@@ -1065,7 +1065,9 @@ lobsters/app/assets/stylesheets/mobile.css
 lobsters/app/assets/stylesheets/select2.css
 lobsters/app/controllers
 lobsters/app/controllers/application_controller.rb
+lobsters/app/controllers/comments_controller.rb
 lobsters/app/controllers/home_controller.rb
+lobsters/app/controllers/search_controller.rb
 lobsters/app/controllers/stories_controller.rb
 lobsters/app/helpers
 lobsters/app/helpers/application_helper.rb
@@ -1076,6 +1078,7 @@ lobsters/app/models
 lobsters/app/models/comment.rb
 lobsters/app/models/hat.rb
 lobsters/app/models/keystore.rb
+lobsters/app/models/search.rb
 lobsters/app/models/short_id.rb
 lobsters/app/models/stories_paginator.rb
 lobsters/app/models/story.rb
@@ -1086,13 +1089,18 @@ lobsters/app/models/tagging.rb
 lobsters/app/models/user.rb
 lobsters/app/models/vote.rb
 lobsters/app/views/comments
+lobsters/app/views/comments/_comment.html.erb
 lobsters/app/views/comments/_commentbox.html.erb
+lobsters/app/views/comments/_postedreply.html.erb
+lobsters/app/views/comments/index.html.erb
 lobsters/app/views/global
 lobsters/app/views/global/_markdownhelp.html.erb
 lobsters/app/views/home
 lobsters/app/views/home/index.html.erb
 lobsters/app/views/layouts
 lobsters/app/views/layouts/application.html.erb
+lobsters/app/views/search
+lobsters/app/views/search/index.html.erb
 lobsters/app/views/stories
 lobsters/app/views/stories/_form.html.erb
 lobsters/app/views/stories/_listdetail.html.erb
@@ -1114,7 +1122,6 @@ lobsters/config/initializers/filter_parameter_logging.rb
 lobsters/config/initializers/inflections.rb
 lobsters/config/initializers/mime_types.rb
 lobsters/config/initializers/production.rb
-lobsters/config/initializers/secret_token.rb
 lobsters/config/initializers/session_store.rb
 lobsters/config/initializers/wrap_parameters.rb
 lobsters/config/locales
@@ -1128,10 +1135,8 @@ lobsters/extras/utils.rb
 lobsters/lib/monkey.rb
 lobsters/lib/tasks
 lobsters/public/404.html
+lobsters/public/500.html
 lobsters/public/assets
-lobsters/public/assets/application-5c14aad03e77d7c778cb6084e41a1626.css
-lobsters/public/assets/application-fe9530ca439b5ee326f9343d65d874b4.js
-lobsters/public/assets/manifest-2d6ad2b3be9b98f87f532d0f7e9d444f.json
 lobsters/tmp
 lobsters/tmp/pids
 lobsters/tmp/sessions
@@ -1143,6 +1148,7 @@ sandstorm-http-bridge
 sandstorm-http-bridge-config
 sandstorm-manifest
 start.sh
+usr/bin/base64
 usr/bin/busybox
 usr/bin/cp
 usr/bin/env
