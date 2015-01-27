@@ -1129,9 +1129,6 @@ lobsters/lib/monkey.rb
 lobsters/lib/tasks
 lobsters/public/404.html
 lobsters/public/assets
-lobsters/public/assets/application-5c14aad03e77d7c778cb6084e41a1626.css
-lobsters/public/assets/application-fe9530ca439b5ee326f9343d65d874b4.js
-lobsters/public/assets/manifest-3e7da0a1a25fb2e71491308b287ef091.json
 lobsters/tmp
 lobsters/tmp/pids
 lobsters/tmp/sessions
