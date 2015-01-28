@@ -1,7 +1,5 @@
 set -x
 
-rm -f /var/tmp/pids/*
-
 export SECRET_KEY_BASE=`base64 /dev/urandom | head -c 30`
 
 cd lobsters

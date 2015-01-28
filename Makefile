@@ -3,10 +3,10 @@ lobsters_repo_branch = sandstorm-app
 
 .PHONY: all clean
 
-all: lobsters/.git lobsters/.bundle initdb.sqlite3 lobsters/tmp/cache
+all: lobsters/.git lobsters/.bundle initdb.sqlite3 lobsters/read-only-cache/assets
 
 clean:
-	rm -rf initdb.sqlite3 lobsters/.bundle lobsters/tmp/cache lobsters/public/assets
+	rm -rf initdb.sqlite3 lobsters/.bundle lobsters/read-only-cache/assets lobsters/public/assets
 
 lobsters/.git:
 	git clone ${lobsters_repo} lobsters && cd lobsters && git checkout ${lobsters_repo_branch}
@@ -14,7 +14,7 @@ lobsters/.git:
 lobsters/.bundle: lobsters/.git
 	cd lobsters && bundle install --path .bundle --without test development --jobs 4 --standalone
 
-lobsters/tmp/cache: lobsters/.bundle
+lobsters/read-only-cache/assets: lobsters/.bundle
 	cd lobsters && RAILS_ENV=production ./bin/rake assets:precompile
 
 initdb.sqlite3: lobsters/.bundle
