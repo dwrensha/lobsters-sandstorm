@@ -1137,9 +1137,6 @@ lobsters/lib/tasks
 lobsters/public/404.html
 lobsters/public/500.html
 lobsters/public/assets
-lobsters/public/assets/application-5c14aad03e77d7c778cb6084e41a1626.css
-lobsters/public/assets/application-fe9530ca439b5ee326f9343d65d874b4.js
-lobsters/public/assets/manifest-2326060c9ce2c008f07203cda0eb0546.json
 lobsters/tmp
 lobsters/vendor/assets
 lobsters/vendor/assets/javascripts
