@@ -1,9 +1,9 @@
 lobsters_repo = https://github.com/dwrensha/lobsters.git
 lobsters_repo_branch = sandstorm-app
 
-.PHONY: all clean
+.PHONY: all clean symlink
 
-all: lobsters/.git lobsters/.bundle initdb.sqlite3 lobsters/read-only-cache/assets
+all: lobsters/.git lobsters/.bundle initdb.sqlite3 lobsters/read-only-cache/assets symlink
 
 clean:
 	rm -rf initdb.sqlite3 lobsters/.bundle lobsters/read-only-cache/assets lobsters/public/assets
@@ -24,3 +24,9 @@ initdb.sqlite3: lobsters/.bundle
 	mv db/db.sqlite3 initdb.sqlite3
 	rm -rf db
 	ln -s /var/sqlite3 db
+
+# yuck. We need to set up a symlink so that nokogiri.so can link with libexslt.so in the sandbox.
+symlink:
+	mkdir -p `pwd | xargs dirname | sed -e 's/^\///'`
+	rm -f `pwd | sed -e 's/^\///'`
+	ln -s / `pwd | sed -e 's/^\///'`
