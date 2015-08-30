@@ -14,6 +14,8 @@ const pkgdef :Spk.PackageDefinition = (
   manifest = (
 
     appVersion = 0,  # Increment this for every release.
+    appTitle = (defaultText = "Lobsters"),
+    appMarketingVersion = (defaultText = "0.0.0"),
 
     actions = [
       # Define your "new document" handlers here.
